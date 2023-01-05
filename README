@@ -1,2 +1,0 @@
-Install build dependencies:
-    sudo apt install libpoppler-glib-dev libcairo-dev
