@@ -12,7 +12,7 @@ pacman -S mingw-w64-ucrt-x86_64-cmake mingw-w64-ucrt-x86_64-cairo mingw-w64-ucrt
 Rocky 8 (RHEL 8):
 you need power tools repo enabled
 ```
-sudo dnf install cairo-devel poppler-glib-devel
+sudo dnf install cairo-devel poppler-glib-devel libffi-devel
 ```
 
 ## Step 2: Build using CMake
