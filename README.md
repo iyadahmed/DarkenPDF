@@ -9,6 +9,11 @@ MSYS2:
 ```
 pacman -S mingw-w64-ucrt-x86_64-cmake mingw-w64-ucrt-x86_64-cairo mingw-w64-ucrt-x86_64-poppler
 ```
+Rocky 8 (RHEL 8):
+you need power tools repo enabled
+```
+sudo dnf install cairo-devel poppler-glib-devel
+```
 
 ## Step 2: Build using CMake
 ```
