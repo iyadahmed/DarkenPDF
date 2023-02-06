@@ -7,14 +7,16 @@
 
 #include "lib.hpp"
 
-int main(int argc, char *argv[]) {
+int main(int argc, char *argv[])
+{
     PopplerDocument *document;
     GError *error;
     const char *pdf_file;
     gchar *absolute, *uri;
     int num_pages;
 
-    if (argc != 2) {
+    if (argc != 2)
+    {
         printf("Expected arguments: input_file.pdf\n");
         return 0;
     }
@@ -22,36 +24,43 @@ int main(int argc, char *argv[]) {
     pdf_file = argv[1];
     error = nullptr;
 
-    if (g_path_is_absolute(pdf_file)) {
+    if (g_path_is_absolute(pdf_file))
+    {
         absolute = g_strdup(pdf_file);
-    } else {
+    }
+    else
+    {
         gchar *dir = g_get_current_dir();
-        absolute = g_build_filename(dir, pdf_file, (gchar *) nullptr);
+        absolute = g_build_filename(dir, pdf_file, (gchar *)nullptr);
         free(dir);
     }
 
     uri = g_filename_to_uri(absolute, nullptr, &error);
     free(absolute);
-    if (uri == nullptr) {
+    if (uri == nullptr)
+    {
         printf("%s\n", error->message);
         return 1;
     }
 
     document = poppler_document_new_from_file(uri, nullptr, &error);
-    if (document == nullptr) {
+    if (document == nullptr)
+    {
         printf("%s\n", error->message);
         return 1;
     }
     free(uri);
 
     num_pages = poppler_document_get_n_pages(document);
-    if (num_pages < 1) {
+    if (num_pages < 1)
+    {
         printf("empty PDF\n");
         return 1;
     }
 
     PopplerPage *first_page = poppler_document_get_page(document, 0);
-    if (first_page == nullptr) {
+    if (first_page == nullptr)
+    {
         printf("poppler fail: page not found\n");
         return 1;
     }
@@ -64,7 +73,8 @@ int main(int argc, char *argv[]) {
                                                                    IMAGE_DPI * pdf_height / 72.0);
     cairo_t *cr = cairo_create(output_pdf_surface);
 
-    for (int page_index = 0; page_index < num_pages; page_index++) {
+    for (int page_index = 0; page_index < num_pages; page_index++)
+    {
         cairo_surface_t *surface = poppler_document_get_page_as_cairo_image_surface(document, page_index);
         cairo_image_surface_adjust_brightness_contrast(surface, 10, -100);
 
