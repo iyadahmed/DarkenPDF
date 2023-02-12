@@ -1,6 +1,11 @@
-# How to build and use
+# DarkenPDF
+Small program for increasing the contrast of PDF files before printing,
+it works by rasterizing the PDF and applying a contrast/brgihtness filter on top then re-exporting the pdf,
+uses Cairo and Poppler
 
-## Step 1: Install build dependencies
+## How to build and use
+
+### Step 1: Install build dependencies
 Ubuntu:
 ```
 sudo apt install libpoppler-glib-dev libcairo-dev
@@ -15,7 +20,7 @@ you need power tools repo enabled
 sudo dnf install cairo-devel poppler-glib-devel libffi-devel
 ```
 
-## Step 2: Build using CMake
+### Step 2: Build using CMake
 ```
 mkdir build
 cd build
@@ -23,7 +28,7 @@ cmake .. -DCMAKE_BUILD_TYPE=Release
 make
 ```
 
-## Step3: Darken your PDFs
+### Step3: Darken your PDFs
 ```
 ./DarkenPDF mypdf.pdf
 ```
