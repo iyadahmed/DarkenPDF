@@ -1,6 +1,6 @@
 # DarkenPDF
 Small program for increasing the contrast of PDF files before printing,
-it works by rasterizing the PDF and applying a contrast/brgihtness filter on top then re-exporting the pdf,
+it works by rasterizing the PDF and applying a contrast/brgihtness filter on top then re-exporting the PDF,
 uses Cairo and Poppler
 
 ## How to build and use
