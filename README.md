@@ -3,6 +3,10 @@ Increase the contrast of PDF files before printing,
 it works by rasterizing the PDF and applying a contrast/brgihtness filter on top then re-exporting the PDF,
 uses Cairo and Poppler
 
+based on:  
+* Rendering PDF to Cairo image surface: https://www.cairographics.org/cookbook/renderpdf/  
+* Creating PDF from Cairo image surface: http://umencs.blogspot.com/2013/04/creating-pdf-in-cc-using-cairo-graphics.html
+
 ## How to build and use
 
 ### Step 1: Install build dependencies
