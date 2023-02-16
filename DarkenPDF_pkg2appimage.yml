@@ -1,0 +1,21 @@
+app: DarkenPDF
+
+ingredients:
+
+script:
+  - cp ./build/DarkenPDF_GUI ./usr/bin/;
+  - cp ./DarkenPDF_GUI.svg .
+  -
+  - cat > DarkenPDF.desktop <<\EOF
+  - [Desktop Entry]
+  - Name=DarkenPDF
+  - GenericName=PDF Editing Tool
+  - Comment=
+  - Keywords=pdf;
+  - Exec=DarkenPDF_GUI %f
+  - Icon=DarkenPDF_GUI
+  - Terminal=false
+  - Type=Application
+  - Categories=Printing;
+  - MimeType=application/x-DarkenPDF;
+  - EOF
