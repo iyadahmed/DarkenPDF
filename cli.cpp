@@ -1,9 +1,9 @@
 #include <cstdio>
 #include <cstdlib>
 
-#include <poppler.h>
-#include <cairo.h>
 #include <cairo-pdf.h>
+#include <cairo.h>
+#include <poppler.h>
 
 #include "lib.hpp"
 

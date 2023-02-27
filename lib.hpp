@@ -1,10 +1,10 @@
 #pragma once
 
-#include <cstdio>
 #include <cmath>
+#include <cstdio>
 
-#include <poppler.h>
 #include <cairo.h>
+#include <poppler.h>
 
 #define IMAGE_DPI 170
 
