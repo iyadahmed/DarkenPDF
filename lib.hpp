@@ -8,8 +8,7 @@
 
 #define IMAGE_DPI 170
 
-void cairo_image_surface_adjust_brightness_contrast(cairo_surface_t *surface, int contrast_factor = 1,
-                                                    int brightness_offset = 0)
+void adjust_brightness_contrast(cairo_surface_t *surface, int contrast_factor = 1, int brightness_offset = 0)
 {
     cairo_surface_flush(surface);
     unsigned char *data = cairo_image_surface_get_data(surface);
@@ -37,7 +36,7 @@ void cairo_image_surface_adjust_brightness_contrast(cairo_surface_t *surface, in
     cairo_surface_mark_dirty(surface);
 }
 
-cairo_surface_t *poppler_document_get_page_as_cairo_image_surface(PopplerDocument *document, int page_index)
+cairo_surface_t *render_page(PopplerDocument *document, int page_index)
 {
     PopplerPage *page = poppler_document_get_page(document, page_index);
     if (page == nullptr)
