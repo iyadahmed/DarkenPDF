@@ -10,29 +10,45 @@ based on:
 ## How to build and use
 
 ### Step 1: Install build dependencies
-Ubuntu:
-```
-sudo apt install libpoppler-glib-dev libcairo-dev
-```
-MSYS2:
-```
-pacman -S mingw-w64-ucrt-x86_64-cmake mingw-w64-ucrt-x86_64-cairo mingw-w64-ucrt-x86_64-poppler
-```
-Rocky 8 (RHEL 8):
+**For Rocky 8 and Ubuntu you need to install Qt6 from the [online installer](https://www.qt.io/download-qt-installer)**
+
+- Ubuntu:
+    ```
+    sudo apt install libpoppler-glib-dev libcairo-dev
+    ```
+
+- Rocky 8 (RHEL 8):
 you need power tools repo enabled
-```
-sudo dnf install cairo-devel poppler-glib-devel libffi-devel
-```
+    ```
+    sudo dnf install cairo-devel poppler-glib-devel libffi-devel
+    ```
+
+- MSYS2:
+    - UCRT:
+        ```
+        pacman -S --needed mingw-w64-ucrt-x86_64-cmake mingw-w64-ucrt-x86_64-cairo mingw-w64-ucrt-x86_64-poppler mingw-w64-ucrt-x86_64-qt-creator
+        ```
+    - MINGW64
+        ```
+        pacman -S --needed mingw-w64-x86_64-cmake mingw-w64-x86_64-cairo mingw-w64-x86_64-poppler mingw-w64-x86_64-qt-creator
+        ```
+
+
 
 ### Step 2: Build using CMake
-```
+```sh
 mkdir build
 cd build
 cmake .. -DCMAKE_BUILD_TYPE=Release
-make
+cmake --build -j ${nproc}
 ```
 
 ### Step3: Darken your PDFs
+Use CLI:
 ```
 ./DarkenPDF mypdf.pdf
+```
+or run GUI:
+```
+./DarkenPDF_GUI
 ```
