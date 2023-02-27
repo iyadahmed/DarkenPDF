@@ -1,8 +1,13 @@
 #ifndef MAIN_WINDOW_HPP
 #define MAIN_WINDOW_HPP
 
-#include <QtWidgets>
+// Note: Poppler must be included before QtWidgets
+// because GLib defines two variables named "signals" and "slots"
+// which clashes with variables defined in QtWidgets
+// and fails to compile :/
 #include <poppler.h>
+
+#include <QtWidgets>
 
 class MainWindow : public QWidget
 {
