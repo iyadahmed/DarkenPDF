@@ -1,0 +1,2 @@
+1- Allow floating point contrast factor and brightness offset
+2- In GUI add ability to save contrast factor and brightness offset as presets
