@@ -76,7 +76,7 @@ int main(int argc, char *argv[])
     for (int page_index = 0; page_index < num_pages; page_index++)
     {
         cairo_surface_t *surface = render_page(document, page_index);
-        adjust_brightness_contrast(surface, 10, -100);
+        adjust_brightness_contrast(surface, 5, -85);
 
         cairo_set_source_surface(cr, surface, 0, 0);
         cairo_paint(cr);
